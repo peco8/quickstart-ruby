@@ -1,20 +1,25 @@
-FROM ruby:2.2.1
+# Using official Ruby runtime base image
+FROM ruby:2.3.1
 
-RUN apt-get update && \
-    apt-get install -y net-tools
+MAINTAINER "Toshiki Inami <t-inami@arukas.io>"
 
-# Install gems
+RUN apt-get -yqq update
+RUN apt-get -yqq install net-tools
+
+# Set the applilcation directory
 ENV APP_HOME /app
-ENV HOME /root
 RUN mkdir $APP_HOME
 WORKDIR $APP_HOME
-COPY Gemfile* $APP_HOME/
+
+# Install gems
+COPY sinatra/Gemfile $APP_HOME/
 RUN bundle install
 
-# Upload source
+# Copy our code from the current folder to /app inside the container
 COPY . $APP_HOME
 
+# Make port 4657 available for publish
+EXPOSE 4567
+
 # Start server
-ENV PORT 3000
-EXPOSE 3000
-CMD ["ruby", "hello.rb"]
+CMD ["ruby", "sinatra/myapp.rb"]
