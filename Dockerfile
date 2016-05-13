@@ -12,7 +12,7 @@ RUN mkdir $APP_HOME
 WORKDIR $APP_HOME
 
 # Install gems
-COPY sinatra/Gemfile $APP_HOME/
+COPY ./sinatra/Gemfile $APP_HOME/
 RUN bundle install
 
 # Copy our code from the current folder to /app inside the container
