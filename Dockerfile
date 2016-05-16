@@ -22,4 +22,4 @@ COPY . $APP_HOME
 EXPOSE 4567
 
 # Start server
-CMD ["ruby", "sinatra/myapp.rb"]
+CMD ["ruby", "sinatra/app.rb"]
