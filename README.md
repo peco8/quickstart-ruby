@@ -1,5 +1,5 @@
 # quickstart-ruby
-A simple Ruby app (using Sinatra: a DSL for quickly creating web applications in Ruby with minimal effort http://www.sinatrarb.com/ ) which can easily be deployed to Arukas.
+A simple Ruby app ( using Sinatra: a DSL for quickly creating web applications in Ruby with minimal effort http://www.sinatrarb.com/ ) which can easily be deployed to Arukas.
 
 ## Running locally
 
