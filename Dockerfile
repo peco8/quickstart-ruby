@@ -1,10 +1,14 @@
 # Using official Ruby runtime base image
-FROM ruby:2.3.1
+FROM ruby:2.3.1-slim
 
 MAINTAINER "Toshiki Inami <t-inami@arukas.io>"
 
-RUN apt-get -yqq update
-RUN apt-get -yqq install net-tools
+# Install net-tools, and then clean up
+RUN apt-get update &&  \
+     apt-get install -y git && \
+    apt-get clean && \
+    apt-get autoclean && \
+    rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 # Set the applilcation directory
 ENV APP_HOME /app
