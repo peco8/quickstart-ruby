@@ -17,7 +17,7 @@ WORKDIR $APP_HOME
 
 # Install gems
 COPY ./sinatra/Gemfile $APP_HOME/
-RUN bundle install -j4
+RUN bundle install --jobs=4
 
 # Copy our code from the current folder to /app inside the container
 COPY . $APP_HOME
