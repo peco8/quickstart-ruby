@@ -1,10 +1,10 @@
 # myapp.rb
 require "sinatra/base"
 
-class App < Sinatra::Base
-  set :bind, "0.0.0.0"
+class Myapp < Sinatra::Base
+  # set :bind, "0.0.0.0"
 
   get "/" do
-    "<p>hello world</p>"
+     'Hello world!'
   end
 end
