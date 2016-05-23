@@ -26,4 +26,4 @@ COPY . $APP_HOME
 EXPOSE 4567
 
 # Start server
-CMD ["ruby", "sinatra/myapp.rb", "-o", "0.0.0.0"]
+CMD ["ruby", "rackup", "-o", "0.0.0.0", "4567"]
