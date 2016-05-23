@@ -16,7 +16,7 @@ RUN mkdir $APP_HOME
 WORKDIR $APP_HOME
 
 # Install gems
-COPY ./sinatra/Gemfile $APP_HOME/
+COPY Gemfile $APP_HOME/
 RUN bundle install --jobs=4
 
 # Copy our code from the current folder to /app inside the container
@@ -26,4 +26,4 @@ COPY . $APP_HOME
 EXPOSE 4567
 
 # Start server
-CMD ["ruby", "rackup", "-o", "0.0.0.0", "4567"]
+CMD ["bundle", "exec", "rackup", "--host", "0.0.0.0", "-p", "4567"]
