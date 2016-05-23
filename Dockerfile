@@ -5,7 +5,25 @@ MAINTAINER "Toshiki Inami <t-inami@arukas.io>"
 
 # Install net-tools, and then clean up
 RUN apt-get update && \
-    apt-get install -y git && \
+    apt-get install -y libreadline-dev \
+                        libssl-dev \
+                        zlib1g-dev \
+                        build-essential \
+                        bison openssl \
+                        libreadline6 \
+                        libreadline6-dev \
+                        curl \
+                        git-core \
+                        zlib1g \
+                        zlib1g-dev l\ibssl-dev \
+                        libyaml-dev \
+                        libsqlite3-0 \
+                        libsqlite3-dev \
+                        sqlite3 \
+                        libxml2-dev \
+                        libxslt-dev \
+                        autoconf \
+                        libc6-dev ncurses-dev && \
     apt-get clean && \
     apt-get autoclean && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
