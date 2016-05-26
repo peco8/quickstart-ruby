@@ -23,7 +23,11 @@ Hello World!
 
 or If you have docker installed already,
 ```
-docker run --rm -e ARUKAS_JSON_API_TOKEN=<APIT_TOKEN> -e ARUKAS_JSON_API_SECRET=<SECRET_KEY> arukasio/arukas run --instances=1 --mem=512 -ports=4567:tcp peco8/quickstart-ruby
+$ docker run --rm -e ARUKAS_JSON_API_TOKEN=<APIT_TOKEN> \
+                  -e ARUKAS_JSON_API_SECRET=<SECRET_KEY> \
+                    arukasio/arukas run --instances=1 \
+                                        --mem=512 \
+                                        --ports=80:tcp peco8/quickstart-ruby
 ```
 ## Author
 
