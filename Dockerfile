@@ -3,18 +3,17 @@ FROM ruby:2.3.1-slim
 
 MAINTAINER "Toshiki Inami <t-inami@arukas.io>"
 
-RUN apt-get update && \
-    apt-get install -y git \
-                       libyaml-dev \
-                       libssl-dev \
-                       libreadline-dev \
-                       libxml2-dev \
-                       libxslt1-dev \
-                       libffi-dev \
-                       build-essential && \
-    apt-get clean && \
-    apt-get autoclean && \
-    rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+# Install curl, git and the other libraries
+RUN apt-get update && apt-get install -y \
+      git \
+      libyaml-dev \
+      libssl-dev \
+      libreadline-dev \
+      libxml2-dev \
+      libxslt1-dev \
+      libffi-dev \
+      build-essential \
+    && rm -rf /var/lib/apt/lists/*
 
 # Set the applilcation directory
 ENV APP_HOME /app
